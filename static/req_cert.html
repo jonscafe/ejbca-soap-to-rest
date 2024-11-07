@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Request</title>
+    <link rel="stylesheet" href="/static/styles.css"> <!-- Optional CSS file for styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Request a Certificate</h1>
+    
+    <!-- Form to request a certificate -->
+    <form action="/request-cert" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="cn">Common Name (CN):</label>
+        <input type="text" id="cn" name="cn" required placeholder="e.g., John Doe">
+
+        <label for="uid">Unique Identifier (UID):</label>
+        <input type="text" id="uid" name="uid" required placeholder="e.g., 123">
+
+        <label for="c">Country (C):</label>
+        <input type="text" id="c" name="c" required placeholder="e.g., ID">
+
+        <label for="o">Organization (O):</label>
+        <input type="text" id="o" name="o" required placeholder="e.g., Example Corp">
+
+        <input type="submit" value="Submit Request">
+    </form>
+
+    <!-- Placeholder for displaying potential error messages -->
+    <div class="error" id="error-message">
+        <!-- Error messages will be displayed here if there are issues with the request -->
+        <!-- For instance, you can display the SOAP fault message here by rendering it from the server -->
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  raweb:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4444:4444"
+    volumes:
+      - ./certs:/etc/ssl/certs
+    # environment:
+    #   - CERT_PATH=/etc/ssl/certs/superadmin.p12
+    #   - CERT_PASSWORD=830494721e7772f0b1f3392b488edf9a840091a9
+    restart: always

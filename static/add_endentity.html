@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add End Entity</title>
+    <link rel="stylesheet" href="/static/style.css"> <!-- Optional for styling -->
+</head>
+<body>
+    <h1>Add End Entity</h1>
+    
+    <form action="/add-endentity" method="post">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <div>
+            <label for="caName">CA Name:</label>
+            <input type="text" id="caName" name="caName" required>
+        </div>
+
+        <div>
+            <label for="certificateProfileName">Certificate Profile Name:</label>
+            <input type="text" id="certificateProfileName" name="certificateProfileName" required>
+        </div>
+
+        <div>
+            <label for="endEntityProfileName">End Entity Profile Name:</label>
+            <input type="text" id="endEntityProfileName" name="endEntityProfileName" required>
+        </div>
+
+        <div>
+            <label for="subjectDN">Subject DN (Distinguished Name):</label>
+            <input type="text" id="subjectDN" name="subjectDN" required>
+        </div>
+
+        <div>
+            <label for="subjectAltName">Subject Alt Name (SAN):</label>
+            <input type="text" id="subjectAltName" name="subjectAltName">
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+        </div>
+
+        <div>
+            <label for="sendNotification">Send Notification:</label>
+            <input type="checkbox" id="sendNotification" name="sendNotification">
+        </div>
+
+        <div>
+            <label for="keyRecoverable">Key Recoverable:</label>
+            <input type="checkbox" id="keyRecoverable" name="keyRecoverable">
+        </div>
+
+        <div>
+            <label for="status">Status:</label>
+            <select id="status" name="status">
+                <option value="10">Active</option>
+                <option value="40">New</option>
+                <option value="50">Revoked</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="tokenType">Token Type:</label>
+            <select id="tokenType" name="tokenType">
+                <option value="1">User Generated</option>
+                <option value="2">P12</option>
+            </select>
+        </div>
+
+        <button type="submit">Add End Entity</button>
+    </form>
+</body>
+</html>
